@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Traffic Monitoring</string>
+    <string name="back4app_server_url">https://project.back4app.io/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">nGEoEK8re6EaVhzGCv7CMx4Jan1hELA1iu1wRxSd</string>
+    <string name="back4app_client_key">ucrONlJxtmlDWCI73mmT5o7MEckCcUEbIs0emz84</string>
+</resources>
