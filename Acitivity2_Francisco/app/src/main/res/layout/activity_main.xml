@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="disableTextfields"
+    tools:context="com.example.cs184p_bc2_20.acitivity2_francisco.MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="495dp"
+        android:background="@android:color/holo_green_light"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="9dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                android:text="Sign Up"
+                android:textColor="@android:color/white"
+                android:textSize="50sp" />
+
+            <EditText
+                android:id="@+id/TEXTFIELD_USERNAME"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_SignUp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:ems="15"
+                android:fontFamily="sans-serif"
+                android:hint="Username"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/holo_blue_bright"
+                android:textColorHint="@android:color/background_light"
+                android:textColorLink="@android:color/holo_blue_bright" />
+
+            <EditText
+                android:id="@+id/TEXTFIELD_PASSWORD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/Username_TEXTFIELD"
+                android:layout_below="@+id/Username_TEXTFIELD"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:ems="15"
+                android:fontFamily="sans-serif"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/TEXTFIELD_REPASSWORD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/Password_TEXTFIELD"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:ems="15"
+                android:fontFamily="sans-serif"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rg1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="90dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/RADIOBTN_MALE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Male"
+                android:textColor="@android:color/background_light" />
+
+            <RadioButton
+                android:id="@+id/RADIOBTN_FEMALE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Female"
+                android:textColor="@android:color/background_light" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rg1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <CheckBox
+                android:id="@+id/CHECKBOX_AGREEMENT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="License agreement"
+                android:onClick="licenseAgreementTicked"
+                android:textColor="@android:color/background_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="11dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/BUTTON_CLEAR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_blue_bright"
+                android:text="Clear"
+                android:textColor="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/BUTTON_SUBMIT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_blue_light"
+                android:onClick="disableButtons"
+                android:text="Sign Up"
+                android:textColor="@android:color/background_light" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

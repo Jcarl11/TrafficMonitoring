@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.joey.barometerv4.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewCompass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvHeading"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="-250dp"
+            android:background="@android:color/background_light"
+            android:src="@drawable/barometer" />
+
+        <ImageView
+            android:id="@+id/imageHand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvHeading"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="-620dp"
+            android:background="@drawable/minutehand"
+            android:rotation="-28"
+            android:src="@drawable/minutehand" />
+
+
+        <TextView
+            android:id="@+id/valTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="73dp"
+            android:layout_marginTop="-15dp"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:text="0000.00"
+            android:textColor="@android:color/black"
+            android:textSize="48dp" />
+
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="0dp"
+            android:onClick="startTracking"
+            android:text="start"
+            android:textSize="24dp" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:onClick="stoptracking"
+            android:text="stop"
+            android:textSize="24dp" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>
