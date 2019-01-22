@@ -3,6 +3,7 @@ package com.example.trafficmonitoring;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -12,12 +13,14 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskExecute extends AsyncTask<String, Void, ArrayList<Report1Entity>>
+public class TaskExecute extends AsyncTask<String, Void, ArrayList<String>>
 {
-    ArrayList<Report1Entity> reportList = new ArrayList<>();
+    ArrayList<String> reportList = new ArrayList<>();
     boolean finished = false;
     ProgressBar progressBar;
     Context context;
@@ -28,7 +31,7 @@ public class TaskExecute extends AsyncTask<String, Void, ArrayList<Report1Entity
     }
 
     @Override
-    protected ArrayList<Report1Entity> doInBackground(String... strings)
+    protected ArrayList<String> doInBackground(String... strings)
     {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Data2");
         query.findInBackground(new FindCallback<ParseObject>()
@@ -44,7 +47,7 @@ public class TaskExecute extends AsyncTask<String, Void, ArrayList<Report1Entity
                         entity.setTimeStamp(data.getDate("TIMESTAMP"));
                         entity.setAverage(data.getString("AVERAGE"));
                         entity.setDay(data.getString("DAY"));
-                        reportList.add(entity);
+                        reportList.add(entity.toJSON());
                     }
                     finished = true;
                 }
@@ -65,10 +68,13 @@ public class TaskExecute extends AsyncTask<String, Void, ArrayList<Report1Entity
     }
 
     @Override
-    protected void onPostExecute(ArrayList<Report1Entity> report1Entities) {
+    protected void onPostExecute(ArrayList<String> report1Entities) {
         progressBar.setVisibility(View.INVISIBLE);
-        if(report1Entities.size() > 0)
-            Toast.makeText(context, "Successful", Toast.LENGTH_SHORT).show();
+        if(report1Entities.size() > 0) {
+            Bundle bundle = new Bundle();
+            bundle.putStringArrayList("data", report1Entities);
+            context.startActivity(new Intent(context, AverageReport.class).putExtras(bundle));
+        }
         else
             Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
     }

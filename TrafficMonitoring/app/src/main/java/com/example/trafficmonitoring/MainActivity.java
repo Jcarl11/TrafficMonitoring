@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
     {
         int checkedId = radioGroup.getCheckedRadioButtonId();
         if(checkedId == R.id.RADIOBTN_AVERAGE)
-            Toast.makeText(this, "Average", Toast.LENGTH_SHORT).show();
-        else if(checkedId == R.id.RADIOBTN_LOS)
             new TaskExecute(progressBar, this).execute("");
+        else if(checkedId == R.id.RADIOBTN_LOS)
+            Toast.makeText(this, "LOS", Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(this, "Please choose", Toast.LENGTH_SHORT).show();
     }

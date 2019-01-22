@@ -1,5 +1,8 @@
 package com.example.trafficmonitoring;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Date;
 
 class Report1Entity
@@ -20,6 +23,18 @@ class Report1Entity
     public String getDay() {return day;}
     public void setDay(String day) {this.day = day;}
 
+    public String toJSON()
+    {
+        JSONObject json = new JSONObject();
+        try {
+            json.put("timeStamp", GlobalVariables.getInstance().convertDateToISO(getTimeStamp()));
+            json.put("average", getAverage());
+            json.put("day", getDay());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return json.toString();
+    }
     private Date timeStamp;
     private String average;
     private String day;
